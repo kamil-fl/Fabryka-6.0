@@ -1,0 +1,6 @@
+{
+  "kpis": [
+    {"id": "traffic", "name": "Traffic", "target": 100000},
+    {"id": "conversions", "name": "Conversions", "target": 5000}
+  ]
+}
