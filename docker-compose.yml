@@ -32,6 +32,8 @@ services:
       - "LETSENCRYPT_EMAIL=${ACME_EMAIL}"
     depends_on:
       - postgres
+      - proxy
+      - docker-gen
 
   n8n:
     image: n8nio/n8n:latest
@@ -58,6 +60,7 @@ services:
       - "LETSENCRYPT_EMAIL=${ACME_EMAIL}"
     depends_on:
       - proxy
+      - docker-gen
 
   proxy:
     image: nginxproxy/nginx-proxy:latest
