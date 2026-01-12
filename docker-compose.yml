@@ -70,6 +70,7 @@ services:
       - ./data/certs:/etc/nginx/certs
       - ./data/vhost.d:/etc/nginx/vhost.d
       - ./data/html:/usr/share/nginx/html
+      - ./data/templates:/etc/docker-gen/templates:ro
     networks:
       - fabryka_net
 
