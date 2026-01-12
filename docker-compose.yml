@@ -90,6 +90,8 @@ services:
       - proxy
     networks:
       - fabryka_net
+    environment:
+      DOCKER_HOST: unix:///var/run/docker.sock
 
   acme-companion:
     image: nginxproxy/acme-companion:latest
