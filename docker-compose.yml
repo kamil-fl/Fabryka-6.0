@@ -109,3 +109,4 @@ services:
 networks:
   fabryka_net:
     driver: bridge
+
