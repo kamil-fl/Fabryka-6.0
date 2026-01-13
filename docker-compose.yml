@@ -94,9 +94,12 @@ services:
     environment:
       DOCKER_HOST: unix:///var/run/docker.sock
     volumes:
-      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+      - ./data/certs:/etc/nginx/certs
+      - ./data/vhost.d:/etc/nginx/vhost.d
+      - ./data/html:/usr/share/nginx/html
       - ./data/templates/nginx.tmpl:/etc/docker-gen/templates/nginx.tmpl:ro
-      - ./data/conf.d:/etc/nginx/conf.d
+      - ./data/conf.d:/etc/nginx/conf.d   # ← TEGO BRAKUJE
     depends_on:
       - proxy
     networks:
