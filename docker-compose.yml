@@ -79,7 +79,7 @@ services:
       - ./data/certs:/etc/nginx/certs
       - ./data/vhost.d:/etc/nginx/vhost.d
       - ./data/html:/usr/share/nginx/html
-      - ./data/templates:/etc/docker-gen/templates:ro
+      - ./data/templates/nginx.tmpl:/etc/docker-gen/templates/nginx.tmpl:ro
     networks:
       - fabryka_net
 
@@ -95,7 +95,7 @@ services:
       DOCKER_HOST: unix:///var/run/docker.sock
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
-      - ./data/templates:/etc/docker-gen/templates:ro
+      - ./data/templates/nginx.tmpl:/etc/docker-gen/templates/nginx.tmpl:ro
       - ./data/conf.d:/etc/nginx/conf.d
     depends_on:
       - proxy
